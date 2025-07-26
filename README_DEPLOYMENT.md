@@ -12,7 +12,7 @@ The deployment workflow (`.github/workflows/deploy.yml`) automatically:
    - Manual workflow dispatch
 
 2. **Build Process**:
-   - Sets up Node.js 18 and Ruby 3.1
+   - Sets up Node.js 18 and Ruby 3.2
    - Installs dependencies (npm and bundler)
    - Creates asset directories
    - Builds CSS with Tailwind CSS (minified)
@@ -71,7 +71,7 @@ bundle exec jekyll build  # Build Jekyll site
 
 ### Prerequisites:
 - Node.js 18+
-- Ruby 3.1+
+- Ruby 3.2+
 - Bundler gem
 
 ### Setup:
@@ -118,6 +118,11 @@ bundle exec jekyll build
 - **Cause**: Missing dependencies or configuration errors
 - **Fix**: Check `_config.yml` and ensure all dependencies are installed
 
+#### 5. "sass-embedded requires ruby version >= 3.2"
+- **Cause**: Ruby version too old for sass-embedded gem
+- **Fix**: Updated workflow to use Ruby 3.2+ (already fixed)
+- **Local Fix**: Update your local Ruby to 3.2+ or use `gem install sass-embedded --platform ruby`
+
 ### Debug Steps:
 
 1. **Check workflow logs** in GitHub Actions tab
@@ -156,7 +161,7 @@ The workflow uses:
 - name: Setup Ruby
   uses: ruby/setup-ruby@v1
   with:
-    ruby-version: '3.2'  # Change version here
+    ruby-version: '3.3'  # Change version here
 ```
 
 ### Add Build Steps:
