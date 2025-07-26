@@ -1,0 +1,68 @@
+# Site settings
+title: "Oinam Jekyll Tailwind Template"
+description: "Oinam's modern Jekyll template with Tailwind CSS - responsive, fast, and production-ready"
+baseurl: "/oinam-tmpl-jekyll-tailwind"
+url: "https://oinam.github.io"
+logo: "oinam-logo.svg"
+
+# Author information
+author:
+  name: "Oinam"
+  email: "hi@oinam.com"
+
+# Social profiles
+social:
+  github: "oinam"
+  twitter: "oinam"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+sass:
+  style: compressed
+  sourcemap: never
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - build.sh
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - node_modules/
+  - package*.json
+  - README*.*
+  - src/
+  - tailwind.config.js
+  - theme.config.js
+  - vendor/
+
+# Includes
+include:
+  - _pages
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"

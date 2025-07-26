@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <article class="prose prose-lg max-w-none">
+    <header class="mb-8">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">{{ page.title }}</h1>
+      
+      <div class="flex items-center text-gray-600 text-sm mb-4">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%B %d, %Y" }}
+        </time>
+        {% if page.author %}
+          <span class="mx-2">•</span>
+          <span>{{ page.author }}</span>
+        {% endif %}
+        {% if page.categories.size > 0 %}
+          <span class="mx-2">•</span>
+          <span>
+            {% for category in page.categories %}
+              <span class="inline-block bg-primary-100 text-primary-800 text-xs px-2 py-1 rounded-full mr-1">
+                {{ category }}
+              </span>
+            {% endfor %}
+          </span>
+        {% endif %}
+      </div>
+      
+      {% if page.description %}
+        <p class="text-xl text-gray-600">{{ page.description }}</p>
+      {% endif %}
+    </header>
+    
+    <div class="prose prose-lg prose-primary max-w-none">
+      {{ content }}
+    </div>
+    
+    {% if page.tags.size > 0 %}
+      <footer class="mt-8 pt-8 border-t border-gray-200">
+        <div class="flex flex-wrap gap-2">
+          <span class="text-sm font-medium text-gray-700">Tags:</span>
+          {% for tag in page.tags %}
+            <span class="inline-block bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">
+              {{ tag }}
+            </span>
+          {% endfor %}
+        </div>
+      </footer>
+    {% endif %}
+  </article>
+</div>

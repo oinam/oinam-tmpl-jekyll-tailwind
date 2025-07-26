@@ -1,0 +1,35 @@
+{
+  "name": "oinam-tmpl-jekyll-tailwind",
+  "version": "1.0.0",
+  "description": "Oinam's Jekyll template with Tailwind CSS - modern, responsive, and production-ready",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/styles/main.css -o ./assets/css/style.css --minify",
+    "build:js": "terser ./src/js/main.js -o ./assets/js/main.min.js --compress --mangle",
+    "watch:css": "tailwindcss -i ./src/styles/main.css -o ./assets/css/style.css --watch",
+    "watch:js": "terser ./src/js/main.js -o ./assets/js/main.min.js --compress --mangle --watch",
+    "dev": "concurrently \"npm run watch:css\" \"npm run watch:js\" \"bundle exec jekyll serve --livereload\"",
+    "build": "npm run build:css && npm run build:js && bundle exec jekyll build",
+    "serve": "bundle exec jekyll serve --livereload"
+  },
+  "keywords": [
+    "oinam",
+    "jekyll",
+    "tailwindcss",
+    "template",
+    "static-site",
+    "responsive",
+    "modern"
+  ],
+  "author": "Oinam",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "concurrently": "^8.2.2",
+    "@tailwindcss/typography": "^0.5.10",
+    "terser": "^5.24.0",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0"
+  }
+}

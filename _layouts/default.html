@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  
+  <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-200">
+    <div class="min-h-screen flex flex-col">
+      {% include header.html %}
+      
+      <main class="flex-grow">
+        {{ content }}
+      </main>
+      
+      {% include footer.html %}
+    </div>
+    
+    <!-- Scripts -->
+    <script>
+      // Add any global JavaScript here
+      console.log('Jekyll Tailwind Template loaded successfully!');
+    </script>
+  </body>
+</html>
