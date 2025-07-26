@@ -1,6 +1,7 @@
 # Oinam Jekyll Tailwind Template
 
 Demo    › https://oinam.github.io/oinam-tmpl-jekyll-tailwind/
+
 Source  › https://github.com/oinam/oinam-tmpl-jekyll-tailwind
 
 A modern, responsive Jekyll template with Tailwind CSS integration and automated GitHub Pages deployment.
